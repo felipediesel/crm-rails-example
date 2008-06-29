@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_filter :load_customers, :only => [:new, :create, :edit, :update]
+  before_filter :load_users, :only => [:new, :create, :edit, :update]
 
   # GET /projects
   # GET /projects.xml
@@ -93,6 +94,10 @@ class ProjectsController < ApplicationController
 
   def load_customers
     @customers = Customer.find(:all).collect { |c| [c.name, c.id] }
+  end
+
+  def load_users
+    @users = User.find(:all, :order => "name")
   end
 
 end
