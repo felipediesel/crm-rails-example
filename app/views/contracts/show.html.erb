@@ -1,0 +1,48 @@
+<p>
+  <b>Name:</b>
+  <%=h @contract.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%=h @contract.code %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @contract.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @contract.status %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%=h @contract.started_at %>
+</p>
+
+<p>
+  <b>Ended at:</b>
+  <%=h @contract.ended_at %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @contract.value %>
+</p>
+
+<p>
+  <b>Leader:</b>
+  <%=h @contract.leader %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @contract.project %>
+</p>
+
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

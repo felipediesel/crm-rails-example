@@ -1,0 +1,48 @@
+<p>
+  <b>Title:</b>
+  <%=h @task.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @task.description %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @task.status %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @task.owner %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @task.priority %>
+</p>
+
+<p>
+  <b>Progress:</b>
+  <%=h @task.progress %>
+</p>
+
+<p>
+  <b>Started at:</b>
+  <%=h @task.started_at %>
+</p>
+
+<p>
+  <b>Ended at:</b>
+  <%=h @task.ended_at %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @task.project %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

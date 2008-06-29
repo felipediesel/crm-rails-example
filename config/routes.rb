@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :tasks
+
+  map.resources :contracts
+
+  map.resources :users
+
   map.resources :projects
 
   map.resources :customers

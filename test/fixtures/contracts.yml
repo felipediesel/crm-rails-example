@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  description: MyText
+  status: MyString
+  started_at: 2008-06-29 09:57:14
+  ended_at: 2008-06-29 09:57:14
+  value: 1.5
+  leader: 
+  project: 
+
+two:
+  name: MyString
+  code: MyString
+  description: MyText
+  status: MyString
+  started_at: 2008-06-29 09:57:14
+  ended_at: 2008-06-29 09:57:14
+  value: 1.5
+  leader: 
+  project: 

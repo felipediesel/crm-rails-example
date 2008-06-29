@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  status: MyString
+  owner: 
+  priority: MyString
+  progress: 1
+  started_at: 2008-06-29 09:57:22
+  ended_at: 2008-06-29 09:57:22
+  project: 
+
+two:
+  title: MyString
+  description: MyText
+  status: MyString
+  owner: 
+  priority: MyString
+  progress: 1
+  started_at: 2008-06-29 09:57:22
+  ended_at: 2008-06-29 09:57:22
+  project: 

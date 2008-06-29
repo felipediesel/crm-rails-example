@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080629124238) do
+ActiveRecord::Schema.define(:version => 20080629125722) do
+
+  create_table "contracts", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "code",        :null => false
+    t.text     "description", :null => false
+    t.string   "status",      :null => false
+    t.datetime "started_at",  :null => false
+    t.datetime "ended_at"
+    t.float    "value"
+    t.integer  "leader_id",   :null => false
+    t.integer  "project_id",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "name",        :null => false
@@ -27,6 +41,29 @@ ActiveRecord::Schema.define(:version => 20080629124238) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "title",       :null => false
+    t.text     "description", :null => false
+    t.string   "status",      :null => false
+    t.integer  "owner_id",    :null => false
+    t.string   "priority",    :null => false
+    t.integer  "progress"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.integer  "project_id",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name",                     :null => false
+    t.string   "login",      :limit => 16, :null => false
+    t.string   "password",                 :null => false
+    t.string   "kind",                     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
