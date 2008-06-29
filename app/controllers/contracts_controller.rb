@@ -1,4 +1,6 @@
 class ContractsController < ApplicationController
+  before_filter :load_projects, :only => [:new, :create, :edit, :update]
+  before_filter :load_leaders, :only => [:new, :create, :edit, :update]
   # GET /contracts
   # GET /contracts.xml
   def index
@@ -81,5 +83,16 @@ class ContractsController < ApplicationController
       format.html { redirect_to(contracts_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  protected
+
+  def load_projects
+    @projects = Project.find(:all).collect { |c| [c.name, c.id] }
+  end
+
+  def load_leaders
+    @leaders = User.find(:all).collect { |c| [c.name, c.id] }
   end
 end

@@ -88,7 +88,9 @@ class ProjectsController < ApplicationController
     end
   end
 
+
   protected
+
   def load_customers
     @customers = Customer.find(:all).collect { |c| [c.name, c.id] }
   end

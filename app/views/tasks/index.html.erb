@@ -23,7 +23,7 @@
     <td><%=h task.progress %></td>
     <td><%=h task.started_at %></td>
     <td><%=h task.ended_at %></td>
-    <td><%=h task.project %></td>
+    <td><%=h task.project.name %></td>
     <td><%= link_to 'Show', task %></td>
     <td><%= link_to 'Edit', edit_task_path(task) %></td>
     <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>

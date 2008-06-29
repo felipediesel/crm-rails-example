@@ -15,7 +15,7 @@
   </p>
   <p>
     <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
+    <%= f.select :owner_id, @owners, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.label :priority %><br />
@@ -27,15 +27,15 @@
   </p>
   <p>
     <%= f.label :started_at %><br />
-    <%= f.datetime_select :started_at %>
+    <%= f.text_field :started_at %>
   </p>
   <p>
     <%= f.label :ended_at %><br />
-    <%= f.datetime_select :ended_at %>
+    <%= f.text_field :ended_at %>
   </p>
   <p>
     <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.select :project_id, @projects, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.submit @task.new_record? ? "Create" : "Update" %>

@@ -1,47 +1,5 @@
 <h1>New task</h1>
 
-<% form_for(@task) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </p>
-  <p>
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
-  </p>
-  <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </p>
-  <p>
-    <%= f.label :progress %><br />
-    <%= f.text_field :progress %>
-  </p>
-  <p>
-    <%= f.label :started_at %><br />
-    <%= f.datetime_select :started_at %>
-  </p>
-  <p>
-    <%= f.label :ended_at %><br />
-    <%= f.datetime_select :ended_at %>
-  </p>
-  <p>
-    <%= f.label :project %><br />
-    <%= f.text_field :project %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+<%= render :partial => "form" %>
 
 <%= link_to 'Back', tasks_path %>

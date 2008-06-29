@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  before_filter :load_projects, :only => [:new, :create, :edit, :update]
+  before_filter :load_owners, :only => [:new, :create, :edit, :update]
+
   # GET /tasks
   # GET /tasks.xml
   def index
@@ -81,5 +84,16 @@ class TasksController < ApplicationController
       format.html { redirect_to(tasks_url) }
       format.xml  { head :ok }
     end
+  end
+
+
+  protected
+
+  def load_projects
+    @projects = Project.find(:all).collect { |c| [c.name, c.id] }
+  end
+
+  def load_owners
+    @owners = User.find(:all).collect { |c| [c.name, c.id] }
   end
 end

@@ -31,11 +31,11 @@
   </p>
   <p>
     <%= f.label :leader %><br />
-    <%= f.text_field :leader %>
+    <%= f.select :leader_id, @leaders, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.label :project %><br />
-    <%= f.text_field :project %>
+    <%= f.select :project_id, @projects, :prompt => "Select..." %>
   </p>
   <p>
     <%= f.submit @contract.new_record? ? "Create" : "Update" %>
