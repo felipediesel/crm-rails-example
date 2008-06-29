@@ -1,8 +1,15 @@
 <html>
-<head>
-  <title>CRM</title>
-</head>
-<body>
-  <%= yield %>
-</body>
+  <head>
+    <title>CRM</title>
+    <%= stylesheet_link_tag "default" %>
+    <%= stylesheet_link_tag "scaffold" %>
+  </head>
+  <body>
+    <h1>CRM</h1>
+    <ul id="menu">
+      <li><%= link_to "Customers", customers_url %></li>
+      <li><%= link_to "Projects", projects_url %></li>
+    </ul>
+    <div id="contents"><%= yield %></div>
+  </body>
 </html>
