@@ -13,6 +13,15 @@
   <%=h @project.customer.name %>
 </p>
 
-
+<% unless @project.tasks.empty? %>
+  <p>
+    <b>Tasks:</b>
+    <ul>
+      <% @project.tasks.each do |task| %>
+        <li><%=h task.title %> - <%=h task.owner.name %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

@@ -28,6 +28,17 @@
   </p>
 <% end %>
 
+<% unless @customer.contracts.empty? %>
+  <p>
+    <b>Contracts:</b>
+    <ul>
+      <% @customer.contracts.each do |contract| %>
+        <li><%=h contract.name %> -> <%=h contract.project.name %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
