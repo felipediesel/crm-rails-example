@@ -11,13 +11,19 @@
   </p>
   <p>
     <%= f.label :password %><br />
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
   </p>
+  <% if @user.new_record?: %>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <% end %>
   <p>
     <%= f.label :kind %><br />
     <%= f.text_field :kind %>
   </p>
   <p>
-    <%= f.submit @users.new_record? ? "Create" : "Update" %>
+    <%= f.submit @user.new_record? ? "Create" : "Update" %>
   </p>
 <% end %>

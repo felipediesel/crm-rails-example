@@ -1,4 +1,7 @@
 class Contract < ActiveRecord::Base
+  belongs_to :leader, :class_name => 'User'
+  belongs_to :project
+
   validates_presence_of :name
   validates_presence_of :code
   validates_presence_of :description
