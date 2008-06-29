@@ -17,6 +17,16 @@
   <b>Rating:</b>
   <%=h @customer.rating %>
 </p>
+<% unless @customer.projects.empty? %>
+  <p>
+    <b>Projects:</b>
+    <ul>
+      <% @customer.projects.each do |project| %>
+        <li><%=h project.name %>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
 
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
