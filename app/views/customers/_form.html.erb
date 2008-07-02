@@ -11,7 +11,9 @@
   </p>
   <p>
     <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone_country_code, :size => 3 %>
+    <%= f.text_field :phone_area_code, :size => 3 %>
+    <%= f.text_field :phone_number, :size => 10 %>
   </p>
   <p>
     <%= f.label :rating %><br />
