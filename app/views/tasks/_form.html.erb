@@ -11,7 +11,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status, Task::OPTIONS_FOR_STATUS %>
   </p>
   <p>
     <%= f.label :owner %><br />
@@ -19,7 +19,7 @@
   </p>
   <p>
     <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
+    <%= f.select :priority, Task::OPTIONS_FOR_PRIORITY %>
   </p>
   <p>
     <%= f.label :progress %><br />

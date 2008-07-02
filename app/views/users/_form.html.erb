@@ -1,6 +1,6 @@
 <% form_for(@user) do |f| %>
   <%= f.error_messages %>
-
+  
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -21,7 +21,7 @@
   <% end %>
   <p>
     <%= f.label :kind %><br />
-    <%= f.text_field :kind %>
+    <%= f.select :kind, User::OPTIONS_FOR_KIND %>
   </p>
   <p>
     <%= f.submit @user.new_record? ? "Create" : "Update" %>

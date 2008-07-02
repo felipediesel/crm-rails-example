@@ -22,8 +22,8 @@
     <td><%=h contract.started_at %></td>
     <td><%=h contract.ended_at %></td>
     <td><%=h contract.value %></td>
-    <td><%=h contract.leader %></td>
-    <td><%=h contract.project %></td>
+    <td><%=h contract.leader.name %></td>
+    <td><%=h contract.project.name %></td>
     <td><%= link_to 'Show', contract %></td>
     <td><%= link_to 'Edit', edit_contract_path(contract) %></td>
     <td><%= link_to 'Destroy', contract, :confirm => 'Are you sure?', :method => :delete %></td>

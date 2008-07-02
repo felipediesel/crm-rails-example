@@ -15,7 +15,7 @@
   </p>
   <p>
     <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.select :status, Contract::OPTIONS_FOR_STATUS %>
   </p>
   <p>
     <%= f.label :started_at %><br />
