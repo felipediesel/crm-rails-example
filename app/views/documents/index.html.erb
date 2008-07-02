@@ -1,0 +1,29 @@
+<h1>Listing documents from project <%= @project.name %></h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Filename</th>
+    <th>Size</th>
+    <th>Content type</th>
+  </tr>
+
+<% for document in @documents %>
+  <tr>
+    <td><%=h document.title %></td>
+    <td><%=h document.description %></td>
+    <td><%=h document.filename %></td>
+    <td><%=h document.size %></td>
+    <td><%=h document.content_type %></td>
+    <td><%= link_to "Download", document.public_filename %></td>
+    <td><%= link_to 'Show', [@project, document] %></td>
+    <td><%= link_to 'Edit', edit_project_document_path(@project, document) %></td>
+    <td><%= link_to 'Destroy', [@project, document], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New document', new_project_document_path(@project) %>

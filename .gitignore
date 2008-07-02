@@ -6,3 +6,4 @@ doc/app
 config/database.yml
 db/*.sqlite3
 *.kpf
+public/uploads

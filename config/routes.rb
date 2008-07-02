@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :logs
 
   map.resources :tasks
@@ -7,7 +8,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
 
-  map.resources :projects
+  map.resources :projects do |projects|
+    projects.resources :documents
+  end
 
   map.resources :customers
 
