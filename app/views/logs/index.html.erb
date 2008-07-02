@@ -1,0 +1,14 @@
+<h1>Listing logs</h1>
+
+<table>
+  <tr>
+    <th>Message</th>
+    <th>At</th>
+  </tr>
+  <% for log in @logs %>
+    <tr>
+      <td><%=h log.message %></td>
+      <td><%=h log.created_at %></td>
+    </tr>
+  <% end %>
+</table>

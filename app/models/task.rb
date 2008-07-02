@@ -10,6 +10,9 @@ class Task < ActiveRecord::Base
   validates_inclusion_of :status, :in => %w(open closed)
   validates_inclusion_of :priority, :in => %w(normal low high)
 
+  after_create :register_create
+  after_update :register_update
+
   #def started_at=(date)
   #  write_attribute(:started_at, date.match(/([0-9]{2})\/([0-9]{2})\/([0-9]{4})/)[1..3].reverse * "-")
   #end
@@ -21,5 +24,13 @@ class Task < ActiveRecord::Base
   #    read_attribute(:started_at).strftime('%d/%m/%Y')
   #  end
   #end
+
+  def register_create
+    Log.create(:message => "Task: '#{self.title}' created by '#{self.owner.name}'.")
+  end
+
+  def register_update
+    Log.create(:message => "Task '#{self.title}' updated by '#{self.owner.name}'.")
+  end
 
 end
