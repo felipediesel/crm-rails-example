@@ -9,6 +9,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.rss # index.rss.builder
       format.xml  { render :xml => @tasks }
     end
   end
