@@ -3,15 +3,14 @@ class SessionsController < ApplicationController
   skip_before_filter :authenticate
 
   def new
-  end
-
-  def create
-    if user = User.find_by_login_and_password(params[:login], params[:password])
-      session[:user] = user.id
-      redirect_to session[:return_to]
-    else
-      flash[:notice] = "The login/password combination is invalid"
-      render :action => :new
+    if params[:login]
+      if user = User.find_by_login_and_password(params[:login], params[:password])
+        session[:user] = user.id
+        redirect_to session[:return_to]
+      else
+        flash[:error] = "The login/password combination is invalid"        
+        flash.discard 
+      end
     end
   end
 

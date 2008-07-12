@@ -22,7 +22,6 @@
       <li><%= link_to "Logout", logout_url %></li>
     </ul>
     <div id="contents">
-      <% debug flash %>
       <% flash.each do |key, msg| %>
         <%= content_tag :div, msg, :class => "flash_" + key.to_s %>
       <% end %>

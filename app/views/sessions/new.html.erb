@@ -1,7 +1,4 @@
-<h1>Login</h1>
-
-<% form_tag sessions_url, :method => :post do %>
-  <%= content_tag(:p, flash[:notice], :style => "color:red") if flash[:notice] %>
+<% form_tag login_url, :method => :post do %>
   <p>
     <b>Login</b><br />
     <%= text_field_tag :login, params[:login] %>
