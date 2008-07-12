@@ -1,5 +1,19 @@
-<p>Bem­ vindo!</p>
-<ul>
-  <li><%= link_to "Customers", customers_url %></li>
-  <li><%= link_to "Projects", projects_url %></li>
-</ul>
+<h1>My Tasks</h1>
+<% @incomplete_tasks.group_by(&:project).each do |project, tasks| %>
+  <% div_for project, :class => "group" do %>
+    <h2><%= project.name %></h2>
+    <ul>
+      <% tasks.each do |task| %> 
+        <%= render :partial => "task", :locals => {:task => task} %> 
+      <% end %> 
+    </ul>
+  <% end %>
+<% end %>
+<div class="group">
+  <h2>Completed Tasks</h2>
+  <ul id="completed_tasks"> 
+    <% @completed_tasks.each do |task| %> 
+      <%= render :partial => "task", :locals => {:task => task} %> 
+    <% end %> 
+  </ul>
+</div>

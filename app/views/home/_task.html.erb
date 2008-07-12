@@ -1,0 +1,9 @@
+<li id="task_<%= task.id %>"> 
+  <% if task.status == "open" %> 
+    <%= check_box_tag "task_mark_#{task.id}", task.id, false, 
+  		:onclick => remote_function(:url => { :action => "finish", :id => task },      
+			:before => %(Element.show("loader")), 
+			:complete => %(Element.hide("loader"))) %>  
+  <% end %> 
+  <%= task.title %> 
+</li> 

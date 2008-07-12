@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   before_filter :authenticate
-  
+
+  helper_method :current_user 
+
   protected
   def authenticate  
     if request.format == :rss
@@ -30,4 +32,8 @@ class ApplicationController < ActionController::Base
       end
     end    
   end
+  
+  def current_user 
+    @current_user ||= User.find(session[:user]) if session[:user] 
+  end  
 end

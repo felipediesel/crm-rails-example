@@ -1,0 +1,11 @@
+page.remove "task_#{@task.id}" 
+page.insert_html :top, "completed_tasks", :partial => "task" 
+
+# Se não tiver nenhuma tarefa... 
+if current_user.tasks.find(:all, :conditions => { :status => "open", 
+    :project_id => @task.project.id }).size == 0 
+  # Remove o DIV project_ID ! 
+  page.remove "project_#{@task.project.id}" 
+end 
+
+page.visual_effect :highlight, "task_#{@task.id}"

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-
+  
   OPTIONS_FOR_KIND = %w(administrator user)
+  
+  has_many :tasks, :foreign_key => :owner_id
 
   validates_presence_of :name
   validates_presence_of :login
