@@ -1,12 +1,6 @@
-<p>
-  <b>Name:</b>
-  <%=h @project.name %>
-</p>
+<% title "Project: " + h(@project.name) -%>
 
-<p>
-  <b>Description:</b>
-  <%=h @project.description %>
-</p>
+<p><%=h(@project.description).gsub!(/\n/, '<br />') %></p>
 
 <p>
   <b>Customer:</b>

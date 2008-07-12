@@ -1,12 +1,6 @@
-<p>
-  <b>Title:</b>
-  <%=h @task.title %>
-</p>
+<% title "Task: " + h(@task.title) -%>
 
-<p>
-  <b>Description:</b>
-  <%=h @task.description %>
-</p>
+<p><%=h(@task.description).gsub!(/\n/, '<br />') %></p>
 
 <p>
   <b>Status:</b>

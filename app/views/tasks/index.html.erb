@@ -1,6 +1,10 @@
-<%= link_to image_tag('rss.jpg'), formatted_tasks_path(:format => :rss), {:style => 'float:right'} %>
+<% content_for :head do -%> 
+	<%= auto_discovery_link_tag :rss, {:format => :rss } -%>
+<% end -%> 
 
-<h1>Listing tasks</h1>
+<% title "Listing tasks" -%>
+
+<%= link_to image_tag('rss.jpg'), formatted_tasks_path(:format => :rss), {:style => 'float:right'} %>
 
 <table>
   <tr>

@@ -76,3 +76,19 @@ div.group ul {
 div.group ul li {
   margin: 8px 15px;
 }
+
+.flash_notice, .flash_error {
+  border: 1px solid #84BE5A;
+  padding: 4px;
+  margin: 0 0 8px;
+  cursor: pointer;
+}
+
+.flash_notice {
+  background: #E4F2DA;
+}
+
+.flash_error {
+  border-color: #CC0000;
+  background: #F4CFD6;
+}
