@@ -8,4 +8,4 @@ if current_user.tasks.find(:all, :conditions => { :status => "open",
   page.remove "project_#{@task.project.id}" 
 end 
 
-page.visual_effect :highlight, "task_#{@task.id}"
+page.visual_effect :highlight, "task_#{@task.id}", :duration => 2
