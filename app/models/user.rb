@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   
   OPTIONS_FOR_KIND = %w(administrator user)
  
+  cattr_accessor :current_user_id 
+ 
   has_many :tasks, :foreign_key => :owner_id
   has_many :contracts, :foreign_key => "leader_id" 
 

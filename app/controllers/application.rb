@@ -14,10 +14,11 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   before_filter :authenticate
+  before_filter :set_current_user 
 
   helper_method :current_user 
 
-  protected
+  protected  
   def authenticate  
     if request.format == :rss
       if user = authenticate_with_http_basic { |u, p| User.find_by_login_and_password(u, p) }
@@ -32,6 +33,11 @@ class ApplicationController < ActionController::Base
       end
     end    
   end
+  
+  
+  def set_current_user 
+    User.current_user_id = session[:user] 
+  end 
   
   def current_user 
     @current_user ||= User.find(session[:user]) if session[:user] 
