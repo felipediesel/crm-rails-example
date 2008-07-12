@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  after_filter :notify_users, :only => [:update] 
   before_filter :load_projects, :only => [:new, :create, :edit, :update]
   before_filter :load_owners, :only => [:new, :create, :edit, :update]
 
@@ -97,4 +98,10 @@ class TasksController < ApplicationController
   def load_owners
     @owners = User.find(:all).collect { |c| [c.name, c.id] }
   end
+  
+  def notify_users 
+    @task.project.members do |member| 
+      TaskNotifier.deliver_update_notification(member, @task) 
+    end 
+  end 
 end
